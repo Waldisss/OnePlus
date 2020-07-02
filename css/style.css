@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+
+    display: flex;
+    justify-content: center;
+}
+
+.hidden {
+    display: none;
+}
+
+.main-content {
+    margin-top: 10%;
+    flex-basis: 300px;
+    font-size: 14px;
+    background-color: white;
+
+    border: 1px solid steelblue;
+    border-radius: 5px;
+}
+
+.page-title {
+    margin: 0;
+    padding: 10px 15px;
+    font-size: inherit;
+    font-weight: normal;
+    color: white;
+    background-color: steelblue;
+}
+
+.error-notification {
+    margin: 10px;
+    padding: 10px 15px;
+
+    border-radius: 5px;
+    background-color: lightpink;
+    color: firebrick;
+}
+
+.default-form,
+.game {
+    margin: 10px;
+}
+
+.default-form > input {
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid lightgray;
+    font-size: 14px;
+}
+
+.default-form > input:focus {
+    border: 1px solid steelblue;
+    outline: none;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 49%;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-align: center;
+    margin: 10px 0 0;
+    padding: 10px 15px;
+    background-color: steelblue;
+    color: white;
+    border-radius: 5px;
+    border: none;
+    font-size: 14px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: #2a78b8;
+}
+
+.btn:focus {
+    outline: none;
+    background-color: #2a78b8;
+}
+
+.btn-registr {
+    width: 100%;
+    margin-bottom: 0;
+}
+
+.game .number {
+    margin: 10px 0;
+    padding: 0 25px;
+    text-align: center;
+    font-size: 200px;
+}
