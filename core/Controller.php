@@ -7,12 +7,14 @@ class Controller
     protected $renderVars;
     protected $viewName;
     protected $layoutName;
+    protected $isAjaxRequest;
 
     public function __construct()
     {
         $this->view = new View();
         $this->renderVars = array();
         $this->layoutName = 'layout';
+        $this->isAjaxRequest = false;
 
         session_start();
     }
@@ -22,7 +24,7 @@ class Controller
         $this->renderVars['content'] = $this->view->render($this->viewName, $this->renderVars);
         return $this->view->render($this->layoutName, $this->renderVars);
     }
-
+    
     protected function postAction()
     {
 
@@ -46,6 +48,10 @@ class Controller
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             $this->getAction();
+        }
+
+        if ($this->isAjaxRequest) {
+            return;
         }
 
         echo $this->renderPage();

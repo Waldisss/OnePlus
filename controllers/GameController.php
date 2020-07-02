@@ -23,7 +23,13 @@ class GameController extends Controller
     {
         if (isset($_POST['addOne'])) {
             $this->user->incPoints();
-            $this->renderVars['points'] = $this->user->getPoints();
+
+            if (isset($_POST['isAjax']) && $_POST['isAjax'] === "true") {
+                $this->isAjaxRequest = true;
+                echo $this->user->getPoints();
+                return;
+            }
+
             header('Location: /index.php');
         }
 
